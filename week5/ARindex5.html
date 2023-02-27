@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../aframe/aframe.min.js"></script>
+		<script src="../ar/aframe-ar.js"></script>
+		<title>Приклад 5 тижня - нестандартні маркери</title>
+	</head>
+	<body>
+<!--		<a-scene embedded arjs = "trackingMethod: best; debug: false; debugUIEnabled: false; sourceType: image; sourceUrl: ../mockimage.png">-->
+<!--		<a-scene embedded arjs = "trackingMethod: best; debug: false; debugUIEnabled: false; sourceType: video; sourceUrl: ../mockvideo.mp4">-->
+		<a-scene embedded arjs>
+
+			<a-marker type='pattern' url='../assets/pattern-letterA.patt'>
+				<a-box color="green"></a-box>
+			</a-marker>
+
+			<a-marker type='pattern' url='../assets/pattern-letterB.patt'>
+				<a-box color="red"></a-box>
+			</a-marker>
+
+			<a-marker type='pattern' url='../assets/pattern-letterC.patt'>
+				<a-box color="white"></a-box>
+			</a-marker>
+
+			<a-marker type='pattern' url='../assets/pattern-letterD.patt'>
+				<a-box color="yellow"></a-box>
+			</a-marker>
+
+			<a-marker type='pattern' url='../assets/pattern-letterF.patt'>
+				<a-box color="blue"></a-box>
+			</a-marker>
+
+			<a-marker type='pattern' url='../assets/pattern-letterG.patt'>
+				<a-box color="magenta"></a-box>
+			</a-marker>
+			<a-entity camera></a-entity>
+		</a-scene>
+	</body>
+</html>
