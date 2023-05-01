@@ -1,7 +1,8 @@
 //import * as THREE from '../three/three.module.js';
 import * as THREE from 'three';
 
-import { ParametricGeometry } from 'three/addons/geometries/ParametricGeometry.js';
+//import { ParametricGeometry } from 'three/addons/geometries/ParametricGeometry.js';
+//import { ParametricGeometry } from 'three/addons/geometries/ParametricGeometries.js';
 
 // Our Javascript will go here.
 
@@ -47,15 +48,16 @@ circlemesh.position.set(2, 0, -6);
 circlemesh.rotation.set(0, 0.5, 0); 
 scene.add(circlemesh); 
 
-var paraFunction=function(a, b) 
+var paraFunction=function(a, b, v) 
 { 
 	var x=-5+5*a; 
 	var y=-5+5*b; 
 	var z =(Math.sin(a*Math.PI)+Math.sin(b*Math.PI))*(-7); 
-	return new THREE.Vector3(x, y, z); 
+	v = new THREE.Vector3(x, y, z)
+	return v; 
 } 
 
-const parageometry = new ParametricGeometry(paraFunction, 8, 8);
+const parageometry = new THREE.ParametricGeometry(paraFunction, 8, 8);
 const paramaterial= new THREE.MeshBasicMaterial( {color: 0xF3FFE2});
 const paramesh= new THREE.Mesh(parageometry, paramaterial);
 paramesh.position.set(0, -2, -100);
@@ -82,8 +84,8 @@ scene.add(lightTwo);
 
 function animate() {
 	delta += 0.1; 
-	//planegeometry.vertices[0].z = -25 + Math.sin(delta)*50; 
-	//planegeometry.verticesNeedUpdate = true;
+	planegeometry.vertices[0].z = -25 + Math.sin(delta)*50; 
+	planegeometry.verticesNeedUpdate = true;
 	
         pyramidmesh.rotation.y+=0.1; 
 	
