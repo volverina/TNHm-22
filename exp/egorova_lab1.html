@@ -1,0 +1,45 @@
+
+<!--Варіант 7
+1. Створіть модель циліндра, що скочується похилою площиною. Зобразіть
+вектори всіх сил, що діють на циліндр. 
+2. Анімуйте модель.
+3. Додайте джерело світла.
+4. «Прив’яжіть» створену сцену до маркеру доповненої реальності.-->
+
+
+<html>
+  <head>
+    <title>Лабораторна робота 1</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+<!--
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+-->
+  </head>
+  <body>
+    <a-scene physics embedded arjs>
+ 		<!--<a-marker type='pattern' url='pattern-bukva-a.patt'> -->
+                        <!--<a-entity scale="0.5 0.5 0.5" rotation="-90 0 0">-->
+    			<!--<a-entity id="cylinder" geometry="primitive: cylinder; radius: 1; height: 2" position="0 1 0" rotation="0 0 45" 
+                                  dynamic-body="mass: 5" animation="property: position; to: 0 -1 0; dur: 3000; loop: true" repeat="5"></a-entity>-->
+			<a-entity animation="property: position; to: -5.73 -3.122 -0.088; dur: 4000; loop: true">
+				<a-entity id="cylinder" geometry="primitive: cylinder; radius: 1; height: 2" position="3 2.712 -8.051" rotation="90 30 45" ></a-entity>
+				<a-cylinder color="crimson" height="3" radius="0.1" position="3 0.5 -9.4"></a-cylinder>
+	      			<!-- сила ваги -->
+				<a-cylinder color="blue" height="3" radius="0.1" position="2.23 4.32 -9.7" rotation="0 0 30"></a-cylinder> <!-- сила реакції опори -->
+				<a-cylinder color="green" height="3" radius="0.1" position="4.8 4.0 -9" rotation="0 0 -60"></a-cylinder> <!-- сила тертя -->
+				<a-cylinder color="yellow" height="5" radius="0.1" position="4.0 4.0 -9" rotation="0 0 -30"></a-cylinder>  <!-- сумарна сила -->
+
+			</a-entity>
+      			<!--<a-entity line="start: 0 2 0; end: 1 2 0; color: blue;"></a-entity>-->
+     			<!--<a-entity line="start: 0 2 0; end: 0 2 -1; color: ;"></a-entity>--> 
+     			<!--<a-entity line="start: 0 2 0; end: 1 2 -1; color: yellow;"></a-entity>-->
+      			<a-plane static-body width="10" height="10" color="#7BC8A4" rotation="-60 -90 0" position="0 0 -10" side="double"></a-plane> <!-- похила площина -->
+			<!--</a-entity>-->
+		<!--</a-marker>-->
+      			<!--<a-camera position="0 3 10"></a-camera>-->
+      			<!--<a-entity light="type: directional; color: #FFF; intensity: 1.5" position="5 5 5"></a-entity>--> <!-- напрямлене світло -->
+    </a-scene>
+  </body>
+</html>
+
