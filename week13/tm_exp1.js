@@ -49,7 +49,7 @@
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.innerHTML = classPrediction;
+            labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
 
